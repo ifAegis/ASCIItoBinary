@@ -5,10 +5,11 @@ from resources import binary
 
 def main():
     target = get_str_value("Single character of ASCII : ")  # Get input from user
-    binary_dict = binary.get(target)  # Call list of binary values
-    output = target.replace(target, binary_dict)  # Replaces target value with binary
+    output = ""
+    for x in target:
+        binary_dict = binary.get(x)  # Call list of binary values
+        output += binary_dict + " " 
     return output
-
 
 def get_str_value(prompt):  # Check if input from user is a string
     while True:
