@@ -1,17 +1,20 @@
 from resources import binary
 
-# Will throw errors if given more than one ASCII character - currently working on a fix
-
 
 def main():
-    target = get_str_value("Single character of ASCII : ")  # Get input from user
+    target = check_value("Input ASCII : ")  # Get input from user
     output = ""
     for x in target:
-        binary_dict = binary.get(x)  # Call list of binary values
-        output += binary_dict + " " 
+        if x in binary:  # Check if value from target is in the binary dictionary
+            binary_dict = binary.get(x)  # Loop over target
+            output += binary_dict + " "  # Append loop to output
+        else:
+            print("Error, please enter only non-special characters.")
+            continue
     return output
 
-def get_str_value(prompt):  # Check if input from user is a string
+
+def check_value(prompt):  # Check if input from user is a string
     while True:
         try:
             return str(input(prompt))
