@@ -1,7 +1,7 @@
 from resources import binary
 
 
-def main():
+def writer():
     target = check_value("Input ASCII : ")  # Get input from user
     output = ""
     for x in target:  # Loop over target
@@ -22,8 +22,9 @@ def check_value(prompt):  # Check if input from user is a string
             print("Please enter a string.")
 
 
-def printer():
-    print(f"Resulting binary : {main()}")
+def main():
+    print(f"Resulting binary : {writer()}")
 
 
-printer()
+if __name__ == '__main__':
+    main()
